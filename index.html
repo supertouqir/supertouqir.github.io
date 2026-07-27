@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muhammad Touqir | Support Specialist</title>
+  <meta
+    name="description"
+    content="Customer support, Shopify technical support, virtual assistant, and operations support services."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --navy: #08182f;
+      --navy-2: #0d2242;
+      --purple: #6d5dfc;
+      --purple-dark: #5547dc;
+      --purple-soft: #f1efff;
+      --text: #172033;
+      --muted: #667085;
+      --line: #e7e9ef;
+      --white: #ffffff;
+      --soft: #f8f9fc;
+      --shadow: 0 18px 45px rgba(16, 24, 40, 0.08);
+      --radius: 18px;
+      --container: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.65;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    .container {
+      width: min(100% - 32px, var(--container));
+      margin-inline: auto;
+    }
+
+    .section {
+      padding: 88px 0;
+    }
+
+    .section-soft {
+      background: var(--soft);
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 46px;
+    }
+
+    .section-title.left {
+      text-align: left;
+    }
+
+    .section-title span {
+      display: inline-block;
+      color: var(--purple);
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      max-width: 720px;
+      margin-inline: auto;
+    }
+
+    .section-title.left p {
+      margin-inline: 0;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 10px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.25s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--purple), #7d6dff);
+      color: var(--white);
+      box-shadow: 0 10px 24px rgba(109, 93, 252, 0.25);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: linear-gradient(135deg, var(--purple-dark), var(--purple));
+    }
+
+    .btn-outline {
+      border-color: rgba(255, 255, 255, 0.22);
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 1000;
+      background: rgba(8, 24, 47, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--white);
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-size: 0.92rem;
+      line-height: 1.2;
+    }
+
+    .brand-text small {
+      display: block;
+      color: #b8c4d8;
+      font-size: 0.67rem;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      color: #dbe5f4;
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--white);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 0;
+      background: transparent;
+      color: var(--white);
+      cursor: pointer;
+    }
+
+    .menu-toggle span,
+    .menu-toggle::before,
+    .menu-toggle::after {
+      content: "";
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: currentColor;
+      margin: 5px auto;
+      transition: 0.25s ease;
+    }
+
+    .hero {
+      padding: 145px 0 70px;
+      min-height: 760px;
+      display: flex;
+      align-items: center;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 78% 28%, rgba(109, 93, 252, 0.28), transparent 24%),
+        linear-gradient(120deg, rgba(8, 24, 47, 0.98), rgba(8, 24, 47, 0.92)),
+        url("https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1800&q=80")
+        center/cover no-repeat;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+      gap: 54px;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 7vw, 5.6rem);
+      line-height: 0.98;
+      letter-spacing: -0.045em;
+      max-width: 760px;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 .accent {
+      color: #8b7fff;
+    }
+
+    .hero p {
+      color: #d4deec;
+      max-width: 680px;
+      font-size: 1.06rem;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 34px;
+    }
+
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      color: #dce5f3;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .hero-stats span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-self: end;
+    }
+
+    .hero-photo {
+      width: min(100%, 470px);
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 28px 28px 0 0;
+      box-shadow: 0 35px 80px rgba(0, 0, 0, 0.35);
+      background: #12243f;
+    }
+
+    .experience-strip {
+      padding: 34px 0;
+      border-bottom: 1px solid var(--line);
+      background: var(--white);
+    }
+
+    .experience-row {
+      display: grid;
+      grid-template-columns: 1.15fr 2fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .experience-intro h3 {
+      margin-bottom: 6px;
+      font-size: 1.25rem;
+    }
+
+    .experience-intro p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .company-list,
+    .tool-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 18px 28px;
+      align-items: center;
+    }
+
+    .company-item,
+    .tool-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+    }
+
+    .logo-dot {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      background: var(--purple-soft);
+      color: var(--purple);
+      font-weight: 800;
+    }
+
+    .services-grid,
+    .case-grid,
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .service-card,
+    .case-card,
+    .testimonial-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: 0 8px 28px rgba(16, 24, 40, 0.04);
+      transition: 0.25s ease;
+    }
+
+    .service-card:hover,
+    .case-card:hover,
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: var(--purple-soft);
+      color: var(--purple);
+      font-size: 1.4rem;
+      margin-bottom: 18px;
+    }
+
+    .service-card h3,
+    .case-card h3 {
+      font-size: 1.08rem;
+      margin-bottom: 12px;
+    }
+
+    .service-card ul {
+      list-style: none;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .service-card li {
+      margin: 8px 0;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .service-card li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--purple);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 0.85fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 26px;
+    }
+
+    .benefit {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .check {
+      flex: 0 0 24px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--purple);
+      color: var(--white);
+      font-size: 0.75rem;
+      margin-top: 2px;
+    }
+
+    .why-visual {
+      background: linear-gradient(135deg, #efeaff, #f8f7ff);
+      border-radius: 30px;
+      min-height: 360px;
+      padding: 34px;
+      display: grid;
+      place-items: center;
+      box-shadow: inset 0 0 0 1px rgba(109, 93, 252, 0.1);
+    }
+
+    .support-illustration {
+      width: 100%;
+      max-width: 420px;
+      aspect-ratio: 4 / 3;
+      border-radius: 22px;
+      background:
+        linear-gradient(180deg, transparent 0 66%, rgba(109, 93, 252, 0.12) 66%),
+        url("https://images.unsplash.com/photo-1553484771-371a605b060b?auto=format&fit=crop&w=900&q=80")
+        center/cover no-repeat;
+      box-shadow: 0 16px 50px rgba(109, 93, 252, 0.18);
+    }
+
+    .case-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .case-card p {
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .case-tag {
+      display: inline-block;
+      margin-top: 18px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--purple);
+      background: var(--purple-soft);
+      border-radius: 999px;
+      padding: 7px 11px;
+    }
+
+    .tools-wrap {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      gap: 20px;
+    }
+
+    .tool-item {
+      flex-direction: column;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .tool-item .logo-dot {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      font-size: 0.82rem;
+    }
+
+    .testimonial-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .testimonial-card .quote {
+      color: var(--purple);
+      font-size: 2rem;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .testimonial-card p {
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .testimonial-card strong {
+      font-size: 0.9rem;
+    }
+
+    .stars {
+      color: #f5b301;
+      margin-top: 14px;
+      letter-spacing: 0.12em;
+    }
+
+    .contact {
+      background: linear-gradient(135deg, var(--navy), var(--navy-2));
+      color: var(--white);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .contact-copy p {
+      color: #c6d2e3;
+      margin: 18px 0 28px;
+    }
+
+    .contact-details {
+      display: grid;
+      gap: 14px;
+      margin-top: 24px;
+      color: #dce5f3;
+    }
+
+    .contact-details a:hover {
+      color: var(--white);
+    }
+
+    .contact-form {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      border-radius: 10px;
+      padding: 14px 15px;
+      outline: none;
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: #aebbd0;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #8b7fff;
+    }
+
+    .contact-form textarea,
+    .contact-form button {
+      grid-column: 1 / -1;
+    }
+
+    .contact-form textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    footer {
+      background: #061327;
+      color: #aebbd0;
+      padding: 20px 0;
+      font-size: 0.82rem;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 1050px) {
+      .nav-links {
+        gap: 16px;
+        font-size: 0.84rem;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .tools-wrap {
+        grid-template-columns: repeat(5, 1fr);
+      }
+    }
+
+    @media (max-width: 860px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 74px;
+        left: 16px;
+        right: 16px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 16px;
+        background: #0a1d38;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 14px;
+        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 12px 10px;
+      }
+
+      .nav-links .btn {
+        margin-top: 8px;
+      }
+
+      .hero {
+        padding-top: 120px;
+        min-height: auto;
+      }
+
+      .hero-grid,
+      .why-grid,
+      .contact-grid,
+      .experience-row {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        margin-top: 20px;
+      }
+
+      .hero-photo {
+        max-width: 390px;
+      }
+
+      .experience-row {
+        gap: 24px;
+      }
+
+      .company-list {
+        justify-content: flex-start;
+      }
+
+      .case-grid,
+      .testimonial-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .section {
+        padding: 68px 0;
+      }
+
+      .hero {
+        padding-bottom: 50px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.65rem, 14vw, 4rem);
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .hero-stats {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .services-grid,
+      .case-grid,
+      .testimonial-grid,
+      .benefit-grid,
+      .contact-form {
+        grid-template-columns: 1fr;
+      }
+
+      .tools-wrap {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .contact-form textarea,
+      .contact-form button {
+        grid-column: auto;
+      }
+
+      .brand-text small {
+        display: none;
+      }
+
+      .hero-photo {
+        max-width: 100%;
+      }
+
+      .service-card,
+      .case-card,
+      .testimonial-card {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#home" class="brand" aria-label="Home">
+        <div class="brand-mark">MT</div>
+        <div class="brand-text">
+          <strong>MUHAMMAD TOUQIR</strong>
+          <small>SUPPORT SPECIALIST</small>
+        </div>
+      </a>
+
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"></button>
+
+      <nav class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#experience">Experience</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#tools">Tools</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn-primary" href="#contact">Book a Free Consultation</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <h1>
+            Reliable Support.<br />
+            Happy Customers.<br />
+            <span class="accent">Growing</span> Businesses.
+          </h1>
+
+          <p>
+            Helping eCommerce and service businesses deliver exceptional customer experiences
+            and smooth operations through professional support, technical expertise, and
+            attention to detail.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Book a Free Consultation</a>
+            <a href="#experience" class="btn btn-outline">View My Experience</a>
+          </div>
+
+          <div class="hero-stats">
+            <span>✓ 15+ Years Experience</span>
+            <span>✓ UK, Australia & US Clients</span>
+            <span>✓ Remote Professional</span>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <!-- Replace this image with your own professional photo -->
+          <img
+            class="hero-photo"
+            src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/ChatGPT_Image_Jul_27_2026_11_38_08_PM.png?v=1785178130"
+            alt="Professional support specialist"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="experience-strip" id="experience">
+      <div class="container experience-row">
+        <div class="experience-intro">
+          <h3>Professional Experience</h3>
+          <p>I have supported international companies, teams, and customers across multiple industries.</p>
+        </div>
+
+        <div class="company-list">
+          <div class="company-item"><span class="logo-dot"><img src ="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/pb_logo_social.png?v=1785178128"></span>PropertyBox</div>
+          <div class="company-item"><span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/images_3.png?v=1785178128"></span>Just Eat</div>
+          <div class="company-item"><span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/images.png?v=1785178127"></span>PageFly</div>
+          <div class="company-item"><span class="logo-dot"><img src ="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/images-1.png?v=1785178949"></span>GemPages</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-title">
+          <span>What I Do</span>
+          <h2>Services I Provide</h2>
+          <p>Flexible support services for eCommerce brands, SaaS businesses, agencies, and service companies.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="card-icon">🎧</div>
+            <h3>Customer Support</h3>
+            <ul>
+              <li>Email support</li>
+              <li>Live chat support</li>
+              <li>Ticket handling</li>
+              <li>Escalations</li>
+              <li>Returns and refunds</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div class="card-icon">🛍️</div>
+            <h3>Shopify Technical Support</h3>
+            <ul>
+              <li>Theme customization</li>
+              <li>CSS, HTML, and JavaScript fixes</li>
+              <li>App integration</li>
+              <li>PageFly and GemPages</li>
+              <li>Bug troubleshooting</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div class="card-icon">👤</div>
+            <h3>Virtual Assistant</h3>
+            <ul>
+<li>Service Delivery</li>
+              <li>Calendar management</li>
+              <li>Email and inbox management</li>
+              <li>Appointment scheduling</li>
+              <li>Data entry and research</li>
+              <li>Administrative tasks</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div class="card-icon">⚙️</div>
+            <h3>Operations Support</h3>
+            <ul>
+              <li>Appointment booking</li>
+              <li>Order management</li>
+              <li>Team coordination</li>
+              <li>Proactive follow-ups</li>
+              <li>Process improvement</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container why-grid">
+        <div>
+          <div class="section-title left">
+            <span>Why Choose Me</span>
+            <h2>Reliable, Experienced, and Easy to Work With</h2>
+            <p>
+              I combine customer service experience with technical Shopify knowledge, allowing me
+              to support both customers and business operations.
+            </p>
+          </div>
+
+          <div class="benefit-grid">
+            <div class="benefit"><span class="check">✓</span><div>15+ years of customer support experience</div></div>
+            <div class="benefit"><span class="check">✓</span><div>VIP customer management</div></div>
+            <div class="benefit"><span class="check">✓</span><div>6 years supporting Shopify merchants</div></div>
+            <div class="benefit"><span class="check">✓</span><div>Shopify technical troubleshooting</div></div>
+            <div class="benefit"><span class="check">✓</span><div>Senior administrator for UK clients</div></div>
+            <div class="benefit"><span class="check">✓</span><div>Detail-oriented and dependable</div></div>
+          </div>
+        </div>
+
+        <div class="why-visual">
+          <div class="support-illustration" aria-label="Customer support workspace illustration"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="portfolio">
+      <div class="container">
+        <div class="section-title">
+          <span>Selected Experience</span>
+          <h2>Portfolio and Case Studies</h2>
+          <p>Examples of the type of work I have handled without revealing confidential customer or company information.</p>
+        </div>
+
+        <div class="case-grid">
+          <article class="case-card">
+            <div class="card-icon">🎧</div>
+            <h3>VIP Customer Support</h3>
+            <p>
+              Managed VIP clients for a UK property media business, handling appointments,
+              photographer coordination, escalations, amendments, and proactive order follow-ups.
+            </p>
+            <span class="case-tag">PropertyBox / FocalAgent</span>
+          </article>
+
+          <article class="case-card">
+            <div class="card-icon">🛍️</div>
+            <h3>Shopify Technical Support</h3>
+            <p>
+              Supported Shopify merchants with layout issues, CSS conflicts, responsive design,
+              app integrations, and troubleshooting across live stores.
+            </p>
+            <span class="case-tag">PageFly</span>
+          </article>
+
+          <article class="case-card">
+            <div class="card-icon">🧩</div>
+            <h3>Customer and Technical Support</h3>
+            <p>
+              Helped users with page building, responsive layouts, app settings, and technical
+              issues while maintaining clear and professional customer communication.
+            </p>
+            <span class="case-tag">GemPages</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="tools">
+      <div class="container">
+        <div class="section-title">
+          <span>My Toolkit</span>
+          <h2>Tools and Platforms</h2>
+        </div>
+
+        <div class="tools-wrap">
+          <div class="tool-item"><span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/Shopify.png?v=1785182944"></span>Shopify</div>
+          <div class="tool-item"><span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/PageFly.png?v=1785182954"></span>PageFly</div>
+          <div class="tool-item"><span class="logo-dot"><img src ="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/GemPages.png?v=1785182954"></span>GemPages</div>
+          <div class="tool-item"><span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/8630405.webp?v=1785178128"></span>Microsoft 365</div>
+          <div class="tool-item"><span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/zendesk.png?v=1785182944"></span>Zendesk</div>
+          <div class="tool-item"><span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/Jira.png?v=1785182955"></span>Jira</div>
+          <div class="tool-item"><span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/Clickup.png?v=1785182954"></span>ClickUp</div>
+          <div class="tool-item"><span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/Intercom.png?v=1785182955"></span>Intercom</div>
+          <div class="tool-item"><span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/slack.png?v=1785182954"></span>Slack</div>
+          <div class="tool-item"><span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/microsoft-teams.webp?v=1785178128"></span>Teams</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="testimonials">
+      <div class="container">
+        <div class="section-title">
+          <span>Recommendations</span>
+          <h2>What Clients and Colleagues Say</h2>
+                  </div>
+
+        <div class="testimonial-grid">
+          <article class="testimonial-card">
+            <div class="quote">“</div>
+            <p>Over the past 18 months, Hafiz has proven himself to be an incredible part of the team. His dedication, consistency, and strong work ethic truly set him apart. He brings real strength to the team and approaches every challenge with positivity and professionalism.
+
+Hafiz is fantastic with customers - especially with supporting Purple Bricks in the dedicated teams channel. PurpleBricks love him — always patient, understanding, and focused on delivering the best possible experience. He consistently goes above and beyond, not only meeting expectations but exceeding them.
+
+It's also especially rewarding to see such outstanding talent and growth within our offshore team.</p>
+            <strong>Manager, PropertyBox</strong>
+            <div class="stars">★★★★★</div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="quote">“</div>
+            <p>Easy to use and great customer service. Touqir is super helpful with any questions and assisted me with something I was unable to fix myself. He has strong knowledge of Shopify, CSS, troubleshooting, and customer communication.</p>
+            <strong>PageFly User a Shopify Merchant</strong>
+            <div class="stars">★★★★★</div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="quote">“</div>
+            <p>Professional, detail-oriented, and dependable when handling complex support issues and escalations.</p>
+            <strong>Colleague, Customer Experience</strong>
+            <div class="stars">★★★★★</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy">
+          <div class="section-title left">
+            <span>Get in Touch</span>
+            <h2>Let’s Work Together</h2>
+          </div>
+
+          <p>
+            Have a project in mind or need dependable customer support, Shopify assistance,
+            virtual assistance, or operations support? Send me a message.
+          </p>
+
+          <a href="mailto:supertouqir@gmail.com" class="btn btn-primary">Book a Free Consultation</a>
+
+          <div class="contact-details">
+            <a href="mailto:supertouqir@gmail.com">Email: supertouqir@gmail.com</a>
+            <a href="https://wa.me/923075018118">WhatsApp: +92 307 5018118</a>
+            <a href="#">LinkedIn: https://www.linkedin.com/in/muhammad-touqir-3917147b/</a>
+            <span>Pakistan — Available for UK and US clients</span>
+          </div>
+        </div>
+
+        <form class="contact-form" action="https://formsubmit.co/supertouqir@gmail.com" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea name="message" placeholder="Your Message" required></textarea>
+          <input type="hidden" name="_subject" value="New website inquiry" />
+          <input type="hidden" name="_captcha" value="false" />
+          <button class="btn btn-primary" type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <span>© 2026 Muhammad Touqir. All rights reserved.</span>
+      <span>Support Specialist · Shopify Expert · Virtual Assistant</span>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    toggle.addEventListener("click", () => {
+      const open = navLinks.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", open);
+    });
+
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  </script>
+</body>
+</html>
