@@ -775,6 +775,236 @@
         padding: 24px;
       }
     }
+@media (max-width: 768px) {
+
+  .hero-grid{
+    display:flex;
+    flex-direction:column;
+  }
+
+  .hero-visual{
+    order:1;
+    margin-bottom:30px;
+  }
+
+  .hero-grid > div:first-child{
+    order:2;
+  }
+
+}   /* =========================
+   TESTIMONIAL SLIDER
+========================= */
+
+.testimonial-slider {
+  position: relative;
+  max-width: 920px;
+  margin: 48px auto 0;
+  padding: 0 70px 42px;
+}
+
+.testimonial-viewport {
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+.testimonial-track {
+  display: flex;
+  transition: transform 0.55s ease;
+  will-change: transform;
+}
+
+.testimonial-slide {
+  min-width: 100%;
+  padding: 4px;
+  box-sizing: border-box;
+}
+
+.testimonial-card {
+  position: relative;
+  min-height: 360px;
+  padding: 52px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 24px;
+  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-quote {
+  position: absolute;
+  top: 20px;
+  left: 34px;
+  font-family: Georgia, serif;
+  font-size: 84px;
+  line-height: 1;
+  color: #6c63ff;
+  opacity: 0.16;
+}
+
+.testimonial-text {
+  position: relative;
+  margin: 0 0 18px;
+  color: #526078;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.testimonial-footer {
+  margin-top: auto;
+  padding-top: 26px;
+  border-top: 1px solid #edf0f5;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.testimonial-footer h3 {
+  margin: 0 0 5px;
+  color: #111827;
+  font-size: 18px;
+}
+
+.testimonial-footer p {
+  margin: 0;
+  color: #7a8499;
+  font-size: 14px;
+}
+
+.testimonial-stars {
+  color: #f5b301;
+  font-size: 20px;
+  letter-spacing: 3px;
+  white-space: nowrap;
+}
+
+.testimonial-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #6c63ff;
+  font-size: 23px;
+  line-height: 1;
+  cursor: pointer;
+  transform: translateY(-70%);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.13);
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.testimonial-arrow:hover {
+  background: #6c63ff;
+  color: #ffffff;
+  transform: translateY(-70%) scale(1.06);
+}
+
+.testimonial-prev {
+  left: 0;
+}
+
+.testimonial-next {
+  right: 0;
+}
+
+.testimonial-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+  transform: translateX(-50%);
+}
+
+.testimonial-dot {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #d6d8e4;
+  cursor: pointer;
+  transition:
+    width 0.3s ease,
+    background 0.3s ease,
+    border-radius 0.3s ease;
+}
+
+.testimonial-dot.active {
+  width: 28px;
+  border-radius: 20px;
+  background: #6c63ff;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .testimonial-slider {
+    padding: 0 0 58px;
+  }
+
+  .testimonial-card {
+    min-height: 420px;
+    padding: 42px 30px 32px;
+  }
+
+  .testimonial-arrow {
+    top: auto;
+    bottom: 0;
+    transform: none;
+  }
+
+  .testimonial-arrow:hover {
+    transform: scale(1.06);
+  }
+
+  .testimonial-prev {
+    left: calc(50% - 76px);
+  }
+
+  .testimonial-next {
+    right: calc(50% - 76px);
+  }
+
+  .testimonial-dots {
+    bottom: 19px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .testimonial-card {
+    min-height: 470px;
+    padding: 40px 24px 28px;
+    border-radius: 20px;
+  }
+
+  .testimonial-text {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .testimonial-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .testimonial-stars {
+    font-size: 17px;
+  }
+
+  .testimonial-quote {
+    left: 18px;
+    font-size: 68px;
+  }
+}
   </style>
 </head>
 
@@ -1017,31 +1247,141 @@
           <h2>What Clients and Colleagues Say</h2>
                   </div>
 
-        <div class="testimonial-grid">
-          <article class="testimonial-card">
-            <div class="quote">“</div>
-            <p>Over the past 18 months, Hafiz has proven himself to be an incredible part of the team. His dedication, consistency, and strong work ethic truly set him apart. He brings real strength to the team and approaches every challenge with positivity and professionalism.
+                 <div class="testimonial-slider">
 
-Hafiz is fantastic with customers - especially with supporting Purple Bricks in the dedicated teams channel. PurpleBricks love him — always patient, understanding, and focused on delivering the best possible experience. He consistently goes above and beyond, not only meeting expectations but exceeding them.
+  <button
+    class="testimonial-arrow testimonial-prev"
+    type="button"
+    aria-label="Previous testimonial"
+  >
+    &#10094;
+  </button>
 
-It's also especially rewarding to see such outstanding talent and growth within our offshore team.</p>
-            <strong>Manager, PropertyBox</strong>
-            <div class="stars">★★★★★</div>
-          </article>
+  <div class="testimonial-viewport">
 
-          <article class="testimonial-card">
-            <div class="quote">“</div>
-            <p>Easy to use and great customer service. Touqir is super helpful with any questions and assisted me with something I was unable to fix myself. He has strong knowledge of Shopify, CSS, troubleshooting, and customer communication.</p>
-            <strong>PageFly User a Shopify Merchant</strong>
-            <div class="stars">★★★★★</div>
-          </article>
+    <div class="testimonial-track">
 
-          <article class="testimonial-card">
-            <div class="quote">“</div>
-            <p>Professional, detail-oriented, and dependable when handling complex support issues and escalations.</p>
-            <strong>Colleague, Customer Experience</strong>
-            <div class="stars">★★★★★</div>
-          </article>
+      <!-- Testimonial 1 -->
+      <article class="testimonial-slide">
+        <div class="testimonial-card">
+          <div class="testimonial-quote">“</div>
+
+          <p class="testimonial-text">
+            Over the past 18 months, Hafiz has proven himself to be an
+            incredible part of the team. His dedication, consistency, and
+            strong work ethic truly set him apart. He brings real strength to
+            the team and approaches every challenge with positivity and
+            professionalism.
+          </p>
+
+          <p class="testimonial-text">
+            Hafiz is fantastic with customers, especially when supporting
+            Purple Bricks in the dedicated Teams channel. He consistently goes
+            above and beyond, not only meeting expectations but exceeding them.
+          </p>
+
+          <div class="testimonial-footer">
+            <div>
+              <h3>Manager</h3>
+              <p>PropertyBox</p>
+            </div>
+
+            <div class="testimonial-stars" aria-label="5 out of 5 stars">
+              ★★★★★
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Testimonial 2 -->
+      <article class="testimonial-slide">
+        <div class="testimonial-card">
+          <div class="testimonial-quote">“</div>
+
+          <p class="testimonial-text">
+            Easy to use and great customer service. Touqir is super helpful
+            with any questions and assisted me with something I was unable to
+            fix myself.
+          </p>
+
+          <p class="testimonial-text">
+            He has strong knowledge of Shopify, CSS, troubleshooting, and
+            customer communication.
+          </p>
+
+          <div class="testimonial-footer">
+            <div>
+              <h3>Shopify Merchant</h3>
+              <p>PageFly User</p>
+            </div>
+
+            <div class="testimonial-stars" aria-label="5 out of 5 stars">
+              ★★★★★
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Testimonial 3 -->
+      <article class="testimonial-slide">
+        <div class="testimonial-card">
+          <div class="testimonial-quote">“</div>
+
+          <p class="testimonial-text">
+            I've had the opportunity to work closely with Touqir and have always been impressed by his professionalism, technical expertise, and attention to detail. He handles complex support issues and high-priority escalations with confidence, communicates clearly with both customers and colleagues, and never hesitates to go above and beyond to find the right solution. His reliability, positive attitude, and commitment to delivering exceptional customer experiences make him a trusted teammate and an outstanding support professional.
+          </p>
+
+          <div class="testimonial-footer">
+            <div>
+              <h3>Colleague</h3>
+              <p>Customer Experience</p>
+            </div>
+
+            <div class="testimonial-stars" aria-label="5 out of 5 stars">
+              ★★★★★
+            </div>
+          </div>
+        </div>
+      </article>
+
+<!-- Testimonial 4 -->
+      <article class="testimonial-slide">
+        <div class="testimonial-card">
+          <div class="testimonial-quote">“</div>
+
+          <p class="testimonial-text">
+            Working with Touqir was a fantastic experience. He was responsive, knowledgeable, and genuinely committed to helping me resolve every issue. His ability to explain technical concepts clearly, combined with his friendly and professional communication, gave me complete confidence throughout the process. I highly recommend him to anyone looking for reliable technical support.
+          </p>
+
+          <div class="testimonial-footer">
+            <div>
+              <h3>Shopify Merchant</h3>
+              <p>Customer Experience</p>
+            </div>
+
+            <div class="testimonial-stars" aria-label="5 out of 5 stars">
+              ★★★★★
+            </div>
+          </div>
+        </div>
+      </article>
+
+
+
+    </div>
+  </div>
+
+  <button
+    class="testimonial-arrow testimonial-next"
+    type="button"
+    aria-label="Next testimonial"
+  >
+    &#10095;
+  </button>
+
+  <div class="testimonial-dots" aria-label="Testimonial navigation"></div>
+
+</div>
         </div>
       </div>
     </section>
@@ -1104,5 +1444,144 @@ It's also especially rewarding to see such outstanding talent and growth within 
       });
     });
   </script>
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const slider = document.querySelector(".testimonial-slider");
+
+  if (!slider) return;
+
+  const track = slider.querySelector(".testimonial-track");
+  const slides = Array.from(
+    slider.querySelectorAll(".testimonial-slide")
+  );
+
+  const previousButton = slider.querySelector(".testimonial-prev");
+  const nextButton = slider.querySelector(".testimonial-next");
+  const dotsContainer = slider.querySelector(".testimonial-dots");
+
+  let currentSlide = 0;
+  let autoplayTimer = null;
+  const autoplayDelay = 6000;
+
+  function createDots() {
+    slides.forEach(function (_, index) {
+      const dot = document.createElement("button");
+
+      dot.type = "button";
+      dot.className = "testimonial-dot";
+      dot.setAttribute(
+        "aria-label",
+        "Show testimonial " + (index + 1)
+      );
+
+      dot.addEventListener("click", function () {
+        showSlide(index);
+        restartAutoplay();
+      });
+
+      dotsContainer.appendChild(dot);
+    });
+  }
+
+  function updateDots() {
+    const dots = dotsContainer.querySelectorAll(".testimonial-dot");
+
+    dots.forEach(function (dot, index) {
+      dot.classList.toggle("active", index === currentSlide);
+      dot.setAttribute(
+        "aria-current",
+        index === currentSlide ? "true" : "false"
+      );
+    });
+  }
+
+  function showSlide(index) {
+    if (index >= slides.length) {
+      currentSlide = 0;
+    } else if (index < 0) {
+      currentSlide = slides.length - 1;
+    } else {
+      currentSlide = index;
+    }
+
+    track.style.transform =
+      "translateX(-" + currentSlide * 100 + "%)";
+
+    updateDots();
+  }
+
+  function nextSlide() {
+    showSlide(currentSlide + 1);
+  }
+
+  function previousSlide() {
+    showSlide(currentSlide - 1);
+  }
+
+  function startAutoplay() {
+    stopAutoplay();
+    autoplayTimer = window.setInterval(nextSlide, autoplayDelay);
+  }
+
+  function stopAutoplay() {
+    if (autoplayTimer) {
+      window.clearInterval(autoplayTimer);
+    }
+  }
+
+  function restartAutoplay() {
+    stopAutoplay();
+    startAutoplay();
+  }
+
+  previousButton.addEventListener("click", function () {
+    previousSlide();
+    restartAutoplay();
+  });
+
+  nextButton.addEventListener("click", function () {
+    nextSlide();
+    restartAutoplay();
+  });
+
+  slider.addEventListener("mouseenter", stopAutoplay);
+  slider.addEventListener("mouseleave", startAutoplay);
+
+  slider.addEventListener("focusin", stopAutoplay);
+  slider.addEventListener("focusout", startAutoplay);
+
+  document.addEventListener("keydown", function (event) {
+    const testimonialSection =
+      slider.closest("#testimonials") ||
+      slider.closest("section");
+
+    if (!testimonialSection) return;
+
+    const sectionPosition =
+      testimonialSection.getBoundingClientRect();
+
+    const sectionIsVisible =
+      sectionPosition.top < window.innerHeight &&
+      sectionPosition.bottom > 0;
+
+    if (!sectionIsVisible) return;
+
+    if (event.key === "ArrowLeft") {
+      previousSlide();
+      restartAutoplay();
+    }
+
+    if (event.key === "ArrowRight") {
+      nextSlide();
+      restartAutoplay();
+    }
+  });
+
+  createDots();
+  showSlide(0);
+  startAutoplay();
+});
+</script>
 </body>
+  
 </html>
