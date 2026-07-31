@@ -812,7 +812,37 @@ height: auto;
     grid-row: 2;
   }
 
-}   /* =========================
+}
+
+
+.company-marquee{
+    overflow:hidden;
+    width:100%;
+    position:relative;
+}
+
+.company-track{
+    display:flex;
+    align-items:center;
+    gap:60px;
+    width:max-content;
+    animation:scrollCompanies 22s linear infinite;
+}
+
+.company-track:hover{
+    animation-play-state:paused;
+}
+
+@keyframes scrollCompanies{
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(-50%);
+    }
+}
+
+   /* =========================
    TESTIMONIAL SLIDER
 ========================= */
 
@@ -1100,12 +1130,90 @@ height: auto;
           <p>I have supported international companies, teams, and customers across multiple industries.</p>
         </div>
 
-        <div class="company-list">
-          <div class="company-item"><span class="logo-dot"><img src ="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/pb_logo_social.png?v=1785178128"></span>PropertyBox</div>
-          <div class="company-item"><span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/images_3.png?v=1785178128"></span>Just Eat</div>
-          <div class="company-item"><span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/images.png?v=1785178127"></span>PageFly</div>
-          <div class="company-item"><span class="logo-dot"><img src ="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/images-1.png?v=1785178949"></span>GemPages</div>
+        <div class="company-marquee">
+    <div class="company-track">
+
+        <div class="company-item">
+            <span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/pb_logo_social.png?v=1785178128"></span>
+            <span>PropertyBox</span>
         </div>
+
+        <div class="company-item">
+            <span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/images_3.png?v=1785178128"></span>
+            <span>Just Eat</span>
+        </div>
+
+        <div class="company-item">
+            <span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/images.png?v=1785178127"></span>
+            <span>PageFly</span>
+        </div>
+
+        <div class="company-item">
+            <span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/images-1.png?v=1785178949"></span>
+            <span>GemPages</span>
+        </div>
+<div class="company-item">
+            <span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/Ship_a_Car_direct_1.png?v=1785490955"></span>
+            <span>Ship A Car Direct</span>
+        </div>
+<div class="company-item">
+            <span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/GreenBee.png?v=1785491651"></span>
+            <span>GreenBee Parking</span>
+        </div>
+<div class="company-item">
+            <span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/TransDate.png?v=1785491650"></span>
+            <span>TransData</span>
+        </div>
+<div class="company-item">
+            <span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/BM.png?v=1785491421"></span>
+            <span>BenchMark Studio</span>
+        </div>
+
+
+
+        <!-- Duplicate for seamless scrolling -->
+
+        <div class="company-item">
+            <span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/pb_logo_social.png?v=1785178128"></span>
+            <span>PropertyBox</span>
+        </div>
+
+        <div class="company-item">
+            <span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/images_3.png?v=1785178128"></span>
+            <span>Just Eat</span>
+        </div>
+
+        <div class="company-item">
+            <span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/images.png?v=1785178127"></span>
+            <span>PageFly</span>
+        </div>
+
+        <div class="company-item">
+            <span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/images-1.png?v=1785178949"></span>
+            <span>GemPages</span>
+        </div>
+<div class="company-item">
+            <span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/Ship_a_Car_direct.png?v=1785490739"></span>
+            <span>Ship A Care Direct</span>
+        </div>
+<div class="company-item">
+            <span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/GreenBee.png?v=1785491651"></span>
+            <span>GreenBee Parking</span>
+        </div>
+<div class="company-item">
+            <span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/TransDate.png?v=1785491650"></span>
+            <span>TransData</span>
+        </div>
+<div class="company-item">
+            <span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/BM.png?v=1785491421"></span>
+            <span>BenchMark Studio</span>
+        </div>
+
+
+
+
+    </div>
+</div>
       </div>
     </section>
 
