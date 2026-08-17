@@ -16,6 +16,8 @@
     rel="stylesheet"
   />
 
+  <script>document.documentElement.classList.add("js");</script>
+
   <style>
     :root {
       --navy: #08182f;
@@ -523,9 +525,38 @@ height: auto;
     }
 
     .tools-wrap {
-      display: grid;
-      grid-template-columns: repeat(10, 1fr);
-      gap: 20px;
+      --tools-gap: 48px;
+      overflow: hidden;
+      width: 100%;
+      position: relative;
+      padding: 4px 0;
+      -webkit-mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
+      mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
+    }
+
+    .tools-track {
+      display: flex;
+      align-items: center;
+      gap: var(--tools-gap);
+      width: max-content;
+      animation: scrollTools 26s linear infinite;
+      will-change: transform;
+    }
+
+    .tools-wrap:hover .tools-track {
+      animation-play-state: paused;
+    }
+
+    .tools-group {
+      display: flex;
+      align-items: center;
+      gap: var(--tools-gap);
+      flex-shrink: 0;
+    }
+
+    @keyframes scrollTools {
+      from { transform: translateX(0); }
+      to { transform: translateX(calc(-50% - (var(--tools-gap) / 2))); }
     }
 
     .tool-item {
@@ -533,6 +564,8 @@ height: auto;
       text-align: center;
       font-size: 0.8rem;
       color: var(--muted);
+      flex: 0 0 auto;
+      min-width: 76px;
     }
 
     .tool-item .logo-dot {
@@ -657,9 +690,7 @@ height: auto;
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .tools-wrap {
-        grid-template-columns: repeat(5, 1fr);
-      }
+      .tools-wrap { --tools-gap: 38px; }
     }
 
     @media (max-width: 860px) {
@@ -764,9 +795,7 @@ height: auto;
         grid-template-columns: 1fr;
       }
 
-      .tools-wrap {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      .tools-wrap { --tools-gap: 28px; }
 
       .contact-form textarea,
       .contact-form button {
@@ -839,6 +868,86 @@ height: auto;
     }
     to{
         transform:translateX(-50%);
+    }
+}
+
+/* =========================
+   SCROLL REVEALS
+========================= */
+
+.js .reveal-on-scroll {
+    opacity: 0;
+    translate: 0 34px;
+    transition:
+        opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+        translate 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+}
+
+.js .reveal-on-scroll.reveal-left {
+    translate: -38px 0;
+}
+
+.js .reveal-on-scroll.reveal-right {
+    translate: 38px 0;
+}
+
+.js .reveal-on-scroll.is-visible {
+    opacity: 1;
+    translate: 0 0;
+}
+
+/* Flowing, wave-like borders on selected feature surfaces. */
+.flow-border {
+    position: relative;
+    isolation: isolate;
+}
+
+.flow-border::after {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    z-index: 2;
+    border-radius: inherit;
+    padding: 2px;
+    pointer-events: none;
+    background: linear-gradient(
+        110deg,
+        rgba(109, 93, 252, 0.2),
+        #6d5dfc,
+        #36c5f0,
+        #9b8cff,
+        #6d5dfc,
+        rgba(109, 93, 252, 0.2)
+    );
+    background-size: 300% 100%;
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: flowBorder 5s linear infinite;
+}
+
+@keyframes flowBorder {
+    to { background-position: 300% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .company-track,
+    .tools-track,
+    .flow-border::after { animation: none; }
+
+    .js .reveal-on-scroll {
+        opacity: 1;
+        translate: 0 0;
+        transition: none;
+    }
+
+    .company-marquee,
+    .tools-wrap {
+        overflow-x: auto;
+        scrollbar-width: thin;
     }
 }
 
@@ -1168,14 +1277,7 @@ height: auto;
             <span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/BM.png?v=1785491421"></span>
             <span>BenchMark Studio</span>
         </div>
-<div class="company-item">
-            <span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/logo_sht.webp?v=1785612779"></span>
-            <span>SalesHuntersThemes</span>
-        </div>
-      <div class="company-item">
-            <span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/images_77fb212c-dbf9-434a-805b-e6e6263c14f7.png?v=1785612778"></span>
-            <span>Ecomate</span>
-        </div>
+
 
 
         <!-- Duplicate for seamless scrolling -->
@@ -1215,14 +1317,7 @@ height: auto;
             <span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/BM.png?v=1785491421"></span>
             <span>BenchMark Studio</span>
         </div>
-<div class="company-item">
-            <span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/logo_sht.webp?v=1785612779"></span>
-            <span>SalesHuntersThemes</span>
-        </div>
-      <div class="company-item">
-            <span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/images_77fb212c-dbf9-434a-805b-e6e6263c14f7.png?v=1785612778"></span>
-            <span>Ecomate</span>
-        </div>
+
 
 
 
@@ -1368,17 +1463,34 @@ height: auto;
           <h2>Tools and Platforms</h2>
         </div>
 
-        <div class="tools-wrap">
-          <div class="tool-item"><span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/Shopify.png?v=1785182944"></span>Shopify</div>
-          <div class="tool-item"><span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/PageFly.png?v=1785182954"></span>PageFly</div>
-          <div class="tool-item"><span class="logo-dot"><img src ="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/GemPages.png?v=1785182954"></span>GemPages</div>
-          <div class="tool-item"><span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/Dynamics_365.png?v=1786653872"></span>Microsoft 365</div>
-          <div class="tool-item"><span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/zendesk.png?v=1785182944"></span>Zendesk</div>
-          <div class="tool-item"><span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/Jira.png?v=1785182955"></span>Jira</div>
-          <div class="tool-item"><span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/Clickup.png?v=1785182954"></span>ClickUp</div>
-          <div class="tool-item"><span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/Intercom.png?v=1785182955"></span>Intercom</div>
-          <div class="tool-item"><span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/slack.png?v=1785182954"></span>Slack</div>
-          <div class="tool-item"><span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/microsoft-teams.webp?v=1785178128"></span>Teams</div>
+        <div class="tools-wrap" aria-label="Tools and platforms">
+          <div class="tools-track">
+            <div class="tools-group">
+              <div class="tool-item"><span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/Shopify.png?v=1785182944" alt=""></span>Shopify</div>
+              <div class="tool-item"><span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/PageFly.png?v=1785182954" alt=""></span>PageFly</div>
+              <div class="tool-item"><span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/GemPages.png?v=1785182954" alt=""></span>GemPages</div>
+              <div class="tool-item"><span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/8630405.webp?v=1785178128" alt=""></span>Microsoft 365</div>
+              <div class="tool-item"><span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/zendesk.png?v=1785182944" alt=""></span>Zendesk</div>
+              <div class="tool-item"><span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/Jira.png?v=1785182955" alt=""></span>Jira</div>
+              <div class="tool-item"><span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/Clickup.png?v=1785182954" alt=""></span>ClickUp</div>
+              <div class="tool-item"><span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/Intercom.png?v=1785182955" alt=""></span>Intercom</div>
+              <div class="tool-item"><span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/slack.png?v=1785182954" alt=""></span>Slack</div>
+              <div class="tool-item"><span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/microsoft-teams.webp?v=1785178128" alt=""></span>Teams</div>
+            </div>
+
+            <div class="tools-group" aria-hidden="true">
+              <div class="tool-item"><span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/Shopify.png?v=1785182944" alt=""></span>Shopify</div>
+              <div class="tool-item"><span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/PageFly.png?v=1785182954" alt=""></span>PageFly</div>
+              <div class="tool-item"><span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/GemPages.png?v=1785182954" alt=""></span>GemPages</div>
+              <div class="tool-item"><span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/8630405.webp?v=1785178128" alt=""></span>Microsoft 365</div>
+              <div class="tool-item"><span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/zendesk.png?v=1785182944" alt=""></span>Zendesk</div>
+              <div class="tool-item"><span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/Jira.png?v=1785182955" alt=""></span>Jira</div>
+              <div class="tool-item"><span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/Clickup.png?v=1785182954" alt=""></span>ClickUp</div>
+              <div class="tool-item"><span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/Intercom.png?v=1785182955" alt=""></span>Intercom</div>
+              <div class="tool-item"><span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/slack.png?v=1785182954" alt=""></span>Slack</div>
+              <div class="tool-item"><span class="logo-dot"><img src="https://cdn.shopify.com/s/files/1/0680/4602/8871/files/microsoft-teams.webp?v=1785178128" alt=""></span>Teams</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1584,6 +1696,68 @@ height: auto;
       link.addEventListener("click", () => {
         navLinks.classList.remove("open");
         toggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const revealTargets = new Set();
+
+      document.querySelectorAll(
+        "main > section:not(.hero), .section-title, .service-card, .benefit, .why-visual, .case-card, .tools-wrap, .testimonial-slider, .contact-copy, .contact-form"
+      ).forEach(function (element) {
+        revealTargets.add(element);
+      });
+
+      document.querySelectorAll(".why-grid > *:first-child, .contact-copy")
+        .forEach(function (element) {
+          element.classList.add("reveal-left");
+        });
+
+      document.querySelectorAll(".why-visual, .contact-form")
+        .forEach(function (element) {
+          element.classList.add("reveal-right");
+        });
+
+      document.querySelectorAll(
+        ".services-grid, .benefit-grid, .case-grid"
+      ).forEach(function (group) {
+        Array.from(group.children).forEach(function (item, index) {
+          item.style.setProperty("--reveal-delay", (index * 90) + "ms");
+        });
+      });
+
+      document.querySelectorAll(
+        ".why-visual, #portfolio .case-card, .testimonial-viewport"
+      ).forEach(function (element) {
+        element.classList.add("flow-border");
+      });
+
+      revealTargets.forEach(function (element) {
+        element.classList.add("reveal-on-scroll");
+      });
+
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+          !("IntersectionObserver" in window)) {
+        revealTargets.forEach(function (element) {
+          element.classList.add("is-visible");
+        });
+        return;
+      }
+
+      const revealObserver = new IntersectionObserver(function (entries, observer) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        });
+      }, {
+        threshold: 0.14,
+        rootMargin: "0px 0px -55px 0px"
+      });
+
+      revealTargets.forEach(function (element) {
+        revealObserver.observe(element);
       });
     });
   </script>
